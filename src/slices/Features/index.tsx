@@ -50,18 +50,26 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText components={components} field={slice.primary.heading} />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-5xl gap-x-8 gap-y-12 sm:place-items-start place-items-center">
-        {slice.primary.card.map((item, index) => (
-          <div
-            key={index}
-            className="max-w-xs grid sm:place-items-start place-items-center"
-          >
-            {item.icon && <div className="mb-5">{icons[item.icon]}</div>}
-            <PrismicRichText components={components} field={item.title} />
-            <PrismicRichText components={components} field={item.description} />
-          </div>
-        ))}
+      <div className="pb-12">
+        <PrismicRichText
+          components={components}
+          field={slice.primary.heading}
+        />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-full gap-x-8 gap-y-12 sm:place-items-start place-items-center">
+          {slice.primary.card.map((item, index) => (
+            <div
+              key={index}
+              className="max-w-xs grid sm:place-items-start place-items-center"
+            >
+              {item.icon && <div className="mb-5">{icons[item.icon]}</div>}
+              <PrismicRichText components={components} field={item.title} />
+              <PrismicRichText
+                components={components}
+                field={item.description}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </Bounded>
   );
