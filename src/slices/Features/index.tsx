@@ -9,7 +9,7 @@ import Heading from "@/components/Heading";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <Heading as="h2" size="md" className="text-center mb-12">
+    <Heading as="h2" size="md" className="text-center my-9 font-semibold">
       {children}
     </Heading>
   ),
